@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      target: build-stage
+    ports:
+      - "8080:8080"
+    command: "npm run serve"
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "56733:80"
